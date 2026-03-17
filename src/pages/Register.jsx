@@ -49,8 +49,8 @@ const Register = () => {
             toast.success('Cuenta registrada exitosamente');
             navigate('/');
         } catch (error) {
-            toast.error('Error al registrar con Google.');
-            console.error(error);
+            console.error("Firebase Google Signup Error:", error);
+            toast.error(`Error Google: ${error.message || 'Error desconocido'}`);
         } finally {
             setLoading(false);
         }

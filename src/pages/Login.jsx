@@ -35,7 +35,8 @@ const Login = () => {
             toast.success('¡Bienvenido a AutoMarket!');
             navigate('/');
         } catch (error) {
-            toast.error('Error al iniciar sesión con Google.');
+            console.error("Firebase Google Login Error:", error);
+            toast.error(`Error Google: ${error.message || 'Error desconocido'}`);
         } finally {
             setLoading(false);
         }
