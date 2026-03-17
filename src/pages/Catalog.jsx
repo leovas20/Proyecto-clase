@@ -7,12 +7,12 @@ import { motion } from 'framer-motion';
 
 // Mock Data for Catalog (to be replaced with Firestore data)
 const MOCK_VEHICLES = [
-    { id: '1', brand: 'Toyota', model: 'Camry', year: 2023, price: 32000, mileage: 15000, transmission: 'Automática', fuel: 'Híbrido', status: 'Usado', image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fd?auto=format&fit=crop&q=80&w=800' },
-    { id: '2', brand: 'BMW', model: 'X5', year: 2024, price: 65000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: 'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&q=80&w=800' },
-    { id: '3', brand: 'Ford', model: 'Mustang', year: 2022, price: 45000, mileage: 22000, transmission: 'Manual', fuel: 'Gasolina', status: 'Usado', image: 'https://images.unsplash.com/photo-1584345611127-8fb37cb5bb3a?auto=format&fit=crop&q=80&w=800' },
-    { id: '4', brand: 'Tesla', model: 'Model 3', year: 2023, price: 48000, mileage: 5000, transmission: 'Automática', fuel: 'Eléctrico', status: 'Usado', image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&q=80&w=800' },
-    { id: '5', brand: 'Honda', model: 'Civic', year: 2024, price: 28000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: 'https://images.unsplash.com/photo-1606611013016-969c19ba27bb?auto=format&fit=crop&q=80&w=800' },
-    { id: '6', brand: 'Audi', model: 'A4', year: 2021, price: 35000, mileage: 35000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=800' },
+    { id: '1', brand: 'Toyota', model: 'Camry', year: 2023, price: 32000, mileage: 15000, transmission: 'Automática', fuel: 'Híbrido', status: 'Usado', image: '/images/camry.png' },
+    { id: '2', brand: 'BMW', model: 'X5', year: 2024, price: 65000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: '/images/x5.png' },
+    { id: '3', brand: 'Ford', model: 'Mustang', year: 2022, price: 45000, mileage: 22000, transmission: 'Manual', fuel: 'Gasolina', status: 'Usado', image: '/images/mustang.png' },
+    { id: '4', brand: 'Tesla', model: 'Model 3', year: 2023, price: 48000, mileage: 5000, transmission: 'Automática', fuel: 'Eléctrico', status: 'Usado', image: '/images/model3.png' },
+    { id: '5', brand: 'Honda', model: 'Civic', year: 2024, price: 28000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: '/images/civic.png' },
+    { id: '6', brand: 'Audi', model: 'A4', year: 2021, price: 35000, mileage: 35000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: '/images/a4.png' },
 ];
 
 const Catalog = () => {

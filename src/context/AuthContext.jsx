@@ -4,7 +4,9 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
-    sendPasswordResetEmail
+    sendPasswordResetEmail,
+    GoogleAuthProvider,
+    signInWithPopup
 } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../firebase/config';
@@ -57,6 +59,31 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    // Google Sign In
+    const loginWithGoogle = async () => {
+        try {
+            const provider = new GoogleAuthProvider();
+            const result = await signInWithPopup(auth, provider);
+            
+            const user = result.user;
+            const docRef = doc(db, 'users', user.uid);
+            const docSnap = await getDoc(docRef);
+            
+            if (!docSnap.exists()) {
+                await setDoc(docRef, {
+                    uid: user.uid,
+                    email: user.email,
+                    displayName: user.displayName,
+                    role: 'buyer', // Default role
+                    createdAt: new Date().toISOString()
+                });
+            }
+            return user;
+        } catch (error) {
+            throw error;
+        }
+    };
+
     // Reset Password
     const resetPassword = async (email) => {
         try {
@@ -94,6 +121,7 @@ export const AuthProvider = ({ children }) => {
         profile,
         signup,
         login,
+        loginWithGoogle,
         logout,
         resetPassword,
         loading

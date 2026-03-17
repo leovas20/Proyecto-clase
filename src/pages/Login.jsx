@@ -5,12 +5,13 @@ import Button from '../components/ui/Button';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const { login } = useAuth();
+    const { login, loginWithGoogle } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -22,6 +23,19 @@ const Login = () => {
             navigate('/');
         } catch (error) {
             toast.error('Error al iniciar sesión. Verifica tus credenciales.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleGoogleLogin = async () => {
+        setLoading(true);
+        try {
+            await loginWithGoogle();
+            toast.success('¡Bienvenido a AutoMarket!');
+            navigate('/');
+        } catch (error) {
+            toast.error('Error al iniciar sesión con Google.');
         } finally {
             setLoading(false);
         }
@@ -96,6 +110,29 @@ const Login = () => {
                         <div>
                             <Button type="submit" fullWidth disabled={loading}>
                                 {loading ? 'Iniciando...' : 'Ingresar'}
+                            </Button>
+                        </div>
+                        
+                        <div className="relative">
+                            <div className="absolute inset-0 flex items-center">
+                                <div className="w-full border-t border-gray-300 dark:border-gray-700"></div>
+                            </div>
+                            <div className="relative flex justify-center text-sm">
+                                <span className="px-2 bg-white dark:bg-brand-DEFAULT text-gray-500">O continuar con</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <Button 
+                                type="button" 
+                                fullWidth 
+                                variant="outline" 
+                                onClick={handleGoogleLogin} 
+                                disabled={loading}
+                                className="flex justify-center items-center gap-2"
+                            >
+                                <FaGoogle className="text-red-500" />
+                                {loading ? 'Conectando...' : 'Google'}
                             </Button>
                         </div>
                     </form>

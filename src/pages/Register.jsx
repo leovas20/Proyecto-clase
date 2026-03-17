@@ -5,6 +5,7 @@ import Button from '../components/ui/Button';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
+import { FaGoogle } from 'react-icons/fa';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -15,7 +16,7 @@ const Register = () => {
         role: 'buyer'
     });
     const [loading, setLoading] = useState(false);
-    const { signup } = useAuth();
+    const { signup, loginWithGoogle } = useAuth();
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -35,6 +36,20 @@ const Register = () => {
             navigate('/');
         } catch (error) {
             toast.error('Error al registrar usuario. Verifica los datos.');
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleGoogleSignup = async () => {
+        setLoading(true);
+        try {
+            await loginWithGoogle();
+            toast.success('Cuenta registrada exitosamente');
+            navigate('/');
+        } catch (error) {
+            toast.error('Error al registrar con Google.');
             console.error(error);
         } finally {
             setLoading(false);
@@ -131,6 +146,29 @@ const Register = () => {
                         <div>
                             <Button type="submit" fullWidth disabled={loading}>
                                 {loading ? 'Registrando...' : 'Crear Cuenta'}
+                            </Button>
+                        </div>
+
+                        <div className="relative">
+                            <div className="absolute inset-0 flex items-center">
+                                <div className="w-full border-t border-gray-300 dark:border-gray-700"></div>
+                            </div>
+                            <div className="relative flex justify-center text-sm">
+                                <span className="px-2 bg-white dark:bg-brand-DEFAULT text-gray-500">O registrarse con</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <Button 
+                                type="button" 
+                                fullWidth 
+                                variant="outline" 
+                                onClick={handleGoogleSignup} 
+                                disabled={loading}
+                                className="flex justify-center items-center gap-2"
+                            >
+                                <FaGoogle className="text-red-500" />
+                                {loading ? 'Conectando...' : 'Google'}
                             </Button>
                         </div>
                     </form>
