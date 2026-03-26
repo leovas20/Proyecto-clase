@@ -28,7 +28,7 @@ const About = () => {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="relative h-96 rounded-2xl overflow-hidden shadow-2xl bg-gray-200 dark:bg-slate-800 flex items-center justify-center border border-gray-100 dark:border-gray-800"
                         >
-                            <img src="https://placehold.co/1200x800/1e293b/ffffff?text=Instalaciones+de+Primer+Nivel" alt="Dealership" className="w-full h-full object-cover" />
+                            <img src="/images/dealership.jpg" alt="Dealership" className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent"></div>
                             <div className="absolute bottom-6 left-6 text-white text-xl font-bold">Instalaciones de Primer Nivel</div>
                         </motion.div>

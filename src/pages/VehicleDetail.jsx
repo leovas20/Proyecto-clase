@@ -20,8 +20,8 @@ const MOCK_VEHICLE = {
     description: 'Excelente estado, único dueño. Mantenimientos al día en agencia. Versión tope de gama con asientos de piel, quemacocos, sistema de navegación, y asistencias de manejo (Toyota Safety Sense).',
     images: [
         '/images/camry.png',
-        'https://placehold.co/800x600/1e293b/ffffff?text=Interior+View',
-        'https://placehold.co/800x600/1e293b/ffffff?text=Rear+View'
+        'https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&q=80&w=800',
+        'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800'
     ],
     seller: {
         name: 'Auto Ventas Premium',
