@@ -18,7 +18,7 @@ const faqs = [
     },
     {
         question: '¿Cuáles son los requisitos para apartar un vehículo?',
-        answer: 'Puedes apartar cualquier unidad de nuestro catálogo con $5,000 MXN. Este apartado es 100% reembolsable por 72 horas mientras completas el trámite de compra o visitas nuestras instalaciones.'
+        answer: 'Puedes apartar cualquier unidad de nuestro catálogo con L 5,000. Este apartado es 100% reembolsable por 72 horas mientras completas el trámite de compra o visitas nuestras instalaciones.'
     },
     {
         question: '¿Hacen envíos a otros estados?',

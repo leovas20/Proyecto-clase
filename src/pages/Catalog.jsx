@@ -7,12 +7,16 @@ import { motion } from 'framer-motion';
 
 // Mock Data for Catalog (to be replaced with Firestore data)
 const MOCK_VEHICLES = [
-    { id: '1', brand: 'Toyota', model: 'Camry', year: 2023, price: 32000, mileage: 15000, transmission: 'Automática', fuel: 'Híbrido', status: 'Usado', image: '/images/camry.png' },
-    { id: '2', brand: 'BMW', model: 'X5', year: 2024, price: 65000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: '/images/x5.png' },
-    { id: '3', brand: 'Ford', model: 'Mustang', year: 2022, price: 45000, mileage: 22000, transmission: 'Manual', fuel: 'Gasolina', status: 'Usado', image: '/images/mustang.png' },
-    { id: '4', brand: 'Tesla', model: 'Model 3', year: 2023, price: 48000, mileage: 5000, transmission: 'Automática', fuel: 'Eléctrico', status: 'Usado', image: '/images/model3.png' },
-    { id: '5', brand: 'Honda', model: 'Civic', year: 2024, price: 28000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: '/images/civic.png' },
-    { id: '6', brand: 'Audi', model: 'A4', year: 2021, price: 35000, mileage: 35000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: '/images/a4.png' },
+    { id: '1', brand: 'Toyota', model: 'Camry', year: 2023, price: 784000, mileage: 15000, transmission: 'Automática', fuel: 'Híbrido', status: 'Usado', image: '/images/camry.png' },
+    { id: '2', brand: 'BMW', model: 'X5', year: 2024, price: 1592500, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: '/images/x5.png' },
+    { id: '3', brand: 'Ford', model: 'Mustang', year: 2022, price: 1102500, mileage: 22000, transmission: 'Manual', fuel: 'Gasolina', status: 'Usado', image: '/images/mustang.png' },
+    { id: '4', brand: 'Tesla', model: 'Model 3', year: 2023, price: 1176000, mileage: 5000, transmission: 'Automática', fuel: 'Eléctrico', status: 'Usado', image: '/images/model3.png' },
+    { id: '5', brand: 'Honda', model: 'Civic', year: 2024, price: 686000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: '/images/civic.png' },
+    { id: '6', brand: 'Audi', model: 'A4', year: 2021, price: 857500, mileage: 35000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: '/images/a4.png' },
+    { id: '7', brand: 'Nissan', model: 'Sentra', year: 2020, price: 490000, mileage: 45000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: 'https://placehold.co/800x600/1e293b/ffffff?text=Nissan+Sentra' },
+    { id: '8', brand: 'Porsche', model: 'Macan', year: 2024, price: 2205000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: 'https://placehold.co/800x600/1e293b/ffffff?text=Porsche+Macan' },
+    { id: '9', brand: 'Chevrolet', model: 'Spark', year: 2019, price: 367500, mileage: 60000, transmission: 'Manual', fuel: 'Gasolina', status: 'Usado', image: 'https://placehold.co/800x600/1e293b/ffffff?text=Chevrolet+Spark' },
+    { id: '10', brand: 'Jeep', model: 'Wrangler', year: 2022, price: 1347500, mileage: 18000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: 'https://placehold.co/800x600/1e293b/ffffff?text=Jeep+Wrangler' },
 ];
 
 const Catalog = () => {
@@ -172,7 +176,7 @@ const Catalog = () => {
                                                 </div>
 
                                                 <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
-                                                    <div className="text-2xl font-bold text-gray-900 dark:text-white">${vehicle.price.toLocaleString()}</div>
+                                                    <div className="text-2xl font-bold text-gray-900 dark:text-white">L {vehicle.price.toLocaleString()}</div>
                                                     <Link to={`/vehicle/${vehicle.id}`}>
                                                         <Button variant="primary" className="py-2 px-4 text-sm">Ver Detalles</Button>
                                                     </Link>

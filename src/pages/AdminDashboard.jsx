@@ -9,13 +9,13 @@ const STATS = {
     totalVehicles: 156,
     totalSales: 45,
     totalUsers: 890,
-    revenue: '$1,250,000'
+    revenue: 'L 30,625,000'
 };
 
 const MOCK_INVENTORY = [
-    { id: '1', brand: 'Toyota', model: 'Camry', year: 2023, price: 32000, status: 'Activo' },
-    { id: '2', brand: 'BMW', model: 'X5', year: 2024, price: 65000, status: 'Vendido' },
-    { id: '3', brand: 'Ford', model: 'Mustang', year: 2022, price: 45000, status: 'Activo' },
+    { id: '1', brand: 'Toyota', model: 'Camry', year: 2023, price: 784000, status: 'Activo' },
+    { id: '2', brand: 'BMW', model: 'X5', year: 2024, price: 1592500, status: 'Vendido' },
+    { id: '3', brand: 'Ford', model: 'Mustang', year: 2022, price: 1102500, status: 'Activo' },
 ];
 
 const AdminDashboard = () => {
@@ -130,7 +130,7 @@ const AdminDashboard = () => {
                                                 <td className="p-4">#{item.id}</td>
                                                 <td className="p-4 font-medium text-gray-900 dark:text-white">{item.brand} {item.model}</td>
                                                 <td className="p-4">{item.year}</td>
-                                                <td className="p-4">${item.price.toLocaleString()}</td>
+                                                <td className="p-4">L {item.price.toLocaleString()}</td>
                                                 <td className="p-4">
                                                     <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium ${item.status === 'Activo' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'}`}>
                                                         {item.status === 'Activo' ? <FaCheckCircle /> : <FaTimesCircle />}

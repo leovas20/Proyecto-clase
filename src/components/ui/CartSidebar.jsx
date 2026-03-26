@@ -65,7 +65,7 @@ const CartSidebar = () => {
                                         <div className="flex-1">
                                             <h4 className="font-bold text-gray-900 dark:text-white line-clamp-1">{item.brand} {item.model}</h4>
                                             <p className="text-sm text-gray-500">{item.year} • {item.status}</p>
-                                            <p className="font-bold text-accent-blue mt-1">${item.price.toLocaleString()}</p>
+                                            <p className="font-bold text-accent-blue mt-1">L {item.price.toLocaleString()}</p>
                                         </div>
                                         <button
                                             onClick={() => removeFromCart(item.id)}
@@ -84,7 +84,7 @@ const CartSidebar = () => {
                             <div className="p-6 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-slate-900 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
                                 <div className="flex justify-between items-center mb-6">
                                     <span className="text-gray-600 dark:text-gray-300 font-medium">Subtotal</span>
-                                    <span className="text-2xl font-bold text-gray-900 dark:text-white">${cartTotal.toLocaleString()}</span>
+                                    <span className="text-2xl font-bold text-gray-900 dark:text-white">L {cartTotal.toLocaleString()}</span>
                                 </div>
                                 <div className="space-y-3">
                                     <Button fullWidth variant="primary" onClick={handleCheckout} className="h-12 shadow-lg shadow-blue-500/20">

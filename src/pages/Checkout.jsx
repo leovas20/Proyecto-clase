@@ -144,7 +144,7 @@ const Checkout = () => {
                                             <img src={item.images ? item.images[0] : item.image} alt={item.model} className="w-16 h-16 object-cover rounded-md" />
                                             <div className="flex-1">
                                                 <h4 className="font-semibold text-gray-900 dark:text-white text-sm line-clamp-1">{item.brand} {item.model}</h4>
-                                                <p className="text-accent-blue font-bold mt-1">${item.price.toLocaleString()}</p>
+                                                <p className="text-accent-blue font-bold mt-1">L {item.price.toLocaleString()}</p>
                                             </div>
                                             <button onClick={() => removeFromCart(item.id)} className="text-gray-400 hover:text-red-500 transition self-start p-1">
                                                 <FaTrashAlt size={12} />
@@ -156,7 +156,7 @@ const Checkout = () => {
                                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4 space-y-3 mb-6">
                                     <div className="flex justify-between text-gray-600 dark:text-gray-400">
                                         <span>Subtotal</span>
-                                        <span>${cartTotal.toLocaleString()}</span>
+                                        <span>L {cartTotal.toLocaleString()}</span>
                                     </div>
                                     <div className="flex justify-between text-gray-600 dark:text-gray-400">
                                         <span>Cargos e Impuestos</span>
@@ -164,7 +164,7 @@ const Checkout = () => {
                                     </div>
                                     <div className="flex justify-between text-xl font-bold text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-700 pt-4 mt-2">
                                         <span>Total a Pagar</span>
-                                        <span className="text-accent-blue">${cartTotal.toLocaleString()}</span>
+                                        <span className="text-accent-blue">L {cartTotal.toLocaleString()}</span>
                                     </div>
                                 </div>
 

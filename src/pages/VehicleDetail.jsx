@@ -12,7 +12,7 @@ const MOCK_VEHICLE = {
     brand: 'Toyota',
     model: 'Camry',
     year: 2023,
-    price: 32000,
+    price: 784000,
     mileage: 15000,
     transmission: 'Automática',
     fuel: 'Híbrido',
@@ -153,7 +153,7 @@ const VehicleDetail = () => {
                                 </div>
 
                                 <div className="text-4xl font-extrabold text-accent-blue mb-8">
-                                    ${vehicle.price.toLocaleString()}
+                                    L {vehicle.price.toLocaleString()}
                                 </div>
 
                                 <div className="space-y-4 mb-8">
