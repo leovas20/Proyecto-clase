@@ -4,6 +4,7 @@ import Button from '../components/ui/Button';
 import { FaSearch } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { MOCK_VEHICLES } from '../data/mockVehicles';
 const Home = () => {
     return (
         <Layout>
@@ -108,11 +109,7 @@ const Home = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Featured Vehicles */}
-                    {[
-                        { id: 1, brand: 'BMW', model: 'X5', year: 2024, price: 1592500, state: 'Nuevo', image: '/images/x5.png' },
-                        { id: 2, brand: 'Toyota', model: 'Camry', year: 2023, price: 784000, state: 'Usado', image: '/images/camry.png' },
-                        { id: 3, brand: 'Ford', model: 'Mustang', year: 2022, price: 1102500, state: 'Usado', image: '/images/mustang.png' }
-                    ].map((vehicle) => (
+                    {MOCK_VEHICLES.filter(v => ['2', '1', '3'].includes(v.id)).map((vehicle) => (
                         <div key={vehicle.id} className="bg-white dark:bg-brand-DEFAULT rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-gray-800 transition transform hover:-translate-y-1 hover:shadow-xl group flex flex-col">
                             <div className="h-48 w-full overflow-hidden relative">
                                 <img src={vehicle.image} alt={`${vehicle.brand} ${vehicle.model}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -123,8 +120,8 @@ const Home = () => {
                                         <span className="text-xs font-semibold tracking-wider text-accent-blue uppercase">{vehicle.year}</span>
                                         <h3 className="text-lg font-bold text-gray-900 dark:text-white mt-1 group-hover:text-accent-blue transition">{vehicle.brand} {vehicle.model}</h3>
                                     </div>
-                                    <span className={`text-xs font-semibold px-2.5 py-0.5 rounded ${vehicle.state === 'Nuevo' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'}`}>
-                                        {vehicle.state}
+                                    <span className={`text-xs font-semibold px-2.5 py-0.5 rounded ${vehicle.status === 'Nuevo' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'}`}>
+                                        {vehicle.status}
                                     </span>
                                 </div>
                                 <div className="mt-auto pt-6 flex justify-between items-center">

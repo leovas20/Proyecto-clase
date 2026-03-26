@@ -6,36 +6,7 @@ import { useCart } from '../context/CartContext';
 import { FaMapMarkerAlt, FaWhatsapp, FaEnvelope, FaPhone, FaShareAlt, FaHeart, FaChevronLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
-// Mock Data
-const MOCK_VEHICLE = {
-    id: '1',
-    brand: 'Toyota',
-    model: 'Camry',
-    year: 2023,
-    price: 784000,
-    mileage: 15000,
-    transmission: 'Automática',
-    fuel: 'Híbrido',
-    status: 'Usado',
-    description: 'Excelente estado, único dueño. Mantenimientos al día en agencia. Versión tope de gama con asientos de piel, quemacocos, sistema de navegación, y asistencias de manejo (Toyota Safety Sense).',
-    images: [
-        '/images/camry.png',
-        'https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&q=80&w=800',
-        'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800'
-    ],
-    seller: {
-        name: 'Auto Ventas Premium',
-        phone: '+525512345678',
-        email: 'ventas@autopremium.com'
-    },
-    specs: {
-        engine: '2.5L 4 Cilindros Híbrido',
-        horsepower: '208 hp',
-        color: 'Blanco Perlado',
-        doors: 4,
-        interior: 'Piel Negra'
-    }
-};
+import { MOCK_VEHICLES } from '../data/mockVehicles';
 
 const VehicleDetail = () => {
     const { id } = useParams();
@@ -47,7 +18,8 @@ const VehicleDetail = () => {
     useEffect(() => {
         // Simulate API Fetch
         setTimeout(() => {
-            setVehicle(MOCK_VEHICLE);
+            const foundVehicle = MOCK_VEHICLES.find(v => v.id === id);
+            setVehicle(foundVehicle || null);
             setLoading(false);
         }, 600);
     }, [id]);
