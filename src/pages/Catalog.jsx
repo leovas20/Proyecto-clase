@@ -13,9 +13,9 @@ const MOCK_VEHICLES = [
     { id: '4', brand: 'Tesla', model: 'Model 3', year: 2023, price: 1176000, mileage: 5000, transmission: 'Automática', fuel: 'Eléctrico', status: 'Usado', image: '/images/model3.png' },
     { id: '5', brand: 'Honda', model: 'Civic', year: 2024, price: 686000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: '/images/civic.png' },
     { id: '6', brand: 'Audi', model: 'A4', year: 2021, price: 857500, mileage: 35000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: '/images/a4.png' },
-    { id: '7', brand: 'Nissan', model: 'Sentra', year: 2020, price: 490000, mileage: 45000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: 'https://images.unsplash.com/photo-1609521263047-f5dc83756a1b?auto=format&fit=crop&q=80&w=800' },
-    { id: '8', brand: 'Porsche', model: 'Macan', year: 2024, price: 2205000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: 'https://images.unsplash.com/photo-1503372996160-b6a3243d526e?auto=format&fit=crop&q=80&w=800' },
-    { id: '9', brand: 'Chevrolet', model: 'Spark', year: 2019, price: 367500, mileage: 60000, transmission: 'Manual', fuel: 'Gasolina', status: 'Usado', image: 'https://images.unsplash.com/photo-1511919884224-ebd1c76de78e?auto=format&fit=crop&q=80&w=800' },
+    { id: '7', brand: 'Nissan', model: 'Sentra', year: 2020, price: 490000, mileage: 45000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=800' },
+    { id: '8', brand: 'Porsche', model: 'Macan', year: 2024, price: 2205000, mileage: 0, transmission: 'Automática', fuel: 'Gasolina', status: 'Nuevo', image: 'https://images.unsplash.com/photo-1503375806022-830206b02660?auto=format&fit=crop&q=80&w=800' },
+    { id: '9', brand: 'Chevrolet', model: 'Spark', year: 2019, price: 367500, mileage: 60000, transmission: 'Manual', fuel: 'Gasolina', status: 'Usado', image: 'https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&q=80&w=800' },
     { id: '10', brand: 'Jeep', model: 'Wrangler', year: 2022, price: 1347500, mileage: 18000, transmission: 'Automática', fuel: 'Gasolina', status: 'Usado', image: 'https://images.unsplash.com/photo-1533558701576-23c65e0272fb?auto=format&fit=crop&q=80&w=800' },
 ];
 
